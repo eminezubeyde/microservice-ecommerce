@@ -1,14 +1,10 @@
 package com.turkcell.inventoryservice.model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,8 +17,6 @@ public class Product extends BaseModel {
     @ManyToMany
     private Set<Category> categories = new HashSet<>();
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<Document> documents = new ArrayList<>();
 
     public Product() {
     }
